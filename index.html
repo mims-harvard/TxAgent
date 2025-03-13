@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="Project page of TxAgent" />
+    <meta property="og:title" content="TxAgent" />
+    <meta
+      property="og:description"
+      content="An AI Agent for therapeutic reasoning across a universe of tools"
+    />
+    <meta
+      property="og:url"
+      content="https://zitniklab.hms.harvard.edu/TxAgent/"
+    />
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/image/TxAgent.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:title" content="TxAgent" />
+    <meta
+      name="twitter:description"
+      content="An AI Agent for therapeutic reasoning across a universe of tools"
+    />
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <meta name="twitter:image" content="static/image/TxAgent.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Keywords for your paper to be indexed by-->
+    <meta
+      name="keywords"
+      content="AI Agent, Agentic AI, therapeutic reasoning, tool use, tool universe, AI scientist"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+      TxAgent: An AI Agent for Therapeutic Reasoning Across a Universe of Tools
+    </title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/bulma.min.css" />
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <link rel="stylesheet" href="static/css/index.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/sunburst.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    <style>
+      .tooluniverse-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      #tooluniverse-container {
+        width: 65%;
+        height: 65%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                TxAgent: An AI agent for therapeutic reasoning across a universe
+                of tools
+              </h1>
+              <div class="is-size-5 publication-authors">
+                <!-- Paper authors -->
+                <span class="author-block">
+                  <a href="https://shgao.site" target="_blank">Shanghua Gao</a
+                  ><sup>1</sup>,</span
+                >
+                <span class="author-block">
+                  <a
+                    href="https://www.linkedin.com/in/richard-zhu-4236901a7/"
+                    target="_blank"
+                    >Richard Zhu</a
+                  ><sup>1</sup>,</span
+                >
+                <span class="author-block">
+                  <a href="https://zlkong.github.io/homepage/" target="_blank"
+                    >Zhenglun Kong</a
+                  ><sup>1</sup>,</span
+                >
+                <span class="author-block">
+                  <a href="https://www.ayushnoori.com/" target="_blank"
+                    >Ayush Noori</a
+                  ><sup>1</sup>,</span
+                >
+                <span class="author-block">
+                  <a
+                    href="https://scholar.google.com/citations?hl=zh-CN&user=Awdn73MAAAAJ"
+                    target="_blank"
+                    >Xiaorui Su</a
+                  ><sup>1</sup>,</span
+                >
+                <span class="author-block">
+                  <a
+                    href="https://www.linkedin.com/in/curtisginder/"
+                    target="_blank"
+                    >Curtis Ginder</a
+                  ><sup>1,2</sup>,</span
+                >
+                <span class="author-block">
+                  <a href="https://sites.google.com/view/theo-t" target="_blank"
+                    >Theodoros Tsiligkaridis</a
+                  ><sup>3</sup>,</span
+                >
+                <span class="author-block">
+                  <a href="https://zitniklab.hms.harvard.edu/" target="_blank"
+                    >Marinka Zitnik</a
+                  ><sup>1,4,5,6&Dagger;;</sup></span
+                >
+              </div>
+              <details>
+                <summary>Author Affiliations</summary>
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block"
+                    ><sup>1</sup>Department of Biomedical Informatics, Harvard
+                    Medical School, Boston, MA</span
+                  >
+                  <span class="author-block"
+                    ><sup>2</sup>Cardiovascular Division, Department of
+                    Medicine, Brigham and Women’s Hospital, Harvard Medical
+                    School, Boston, MA</span
+                  >
+                  <span class="author-block"
+                    ><sup>3</sup>MIT Lincoln Laboratory, Lexington, MA</span
+                  >
+                  <span class="author-block"
+                    ><sup>4</sup>Kempner Institute for the Study of Natural and
+                    Artificial Intelligence, Harvard University, Cambridge,
+                    MA</span
+                  >
+                  <span class="author-block"
+                    ><sup>5</sup>Broad Institute of MIT and Harvard, Cambridge,
+                    MA</span
+                  ><br />
+                  <span class="author-block"
+                    ><sup>6</sup>Harvard Data Science Initiative, Cambridge,
+                    MA</span
+                  >
+                </div>
+              </details>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- Arxiv PDF link -->
+                  <span class="link-block">
+                    <a
+                      href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf"
+                      target="_blank"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a
+                      href="https://github.com/mims-harvard/TxAgent"
+                      target="_blank"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a
+                      href="https://huggingface.co/collections/mims-harvard/txagent-67c8e54a9d03a429bb0c622c"
+                      target="_blank"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon"> 🤗 </span>
+                      <span>HuggingFace</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Model overview -->
+    <section class="hero is-small">
+      <div class="hero-body content-container">
+        <div class="container">
+          <h2 class="title is-2 has-text-centered">TxAgent model</h2>
+          <div class="container is-centered has-text-centered">
+            <img
+              src="static/images/txagent.jpg"
+              alt="TxAgent model"
+              style="height: auto; max-width: 48vw"
+              class="responsive-image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End model overview -->
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Precision therapeutics require multimodal adaptive models that
+                generate personalized treatment recommendations. We introduce
+                TxAgent, an AI agent that leverages multi-step reasoning and
+                real-time biomedical knowledge retrieval across a toolbox of 211
+                tools to analyze drug interactions, contraindications, and
+                patient-specific treatment strategies. TxAgent evaluates how
+                drugs interact at molecular, pharmacokinetic, and clinical
+                levels, identifies contraindications based on patient
+                comorbidities and concurrent medications, and tailors treatment
+                strategies to individual patient characteristics, including age,
+                genetic factors, and disease progression. TxAgent retrieves and
+                synthesizes evidence from multiple biomedical sources, assesses
+                interactions between drugs and patient conditions, and refines
+                treatment recommendations through iterative reasoning. It
+                selects tools based on task objectives and executes structured
+                function calls to solve therapeutic tasks that require clinical
+                reasoning and cross-source validation. The ToolUniverse
+                consolidates 211 tools from trusted sources, including all US
+                FDA-approved drugs since 1939 and validated clinical insights
+                from Open Targets. TxAgent outperforms leading LLMs, tool-use
+                models, and reasoning agents across five new benchmarks: DrugPC,
+                BrandPC, GenericPC, TreatmentPC, and DescriptionPC, covering
+                3,168 drug reasoning tasks and 456 personalized treatment
+                scenarios. It achieves 92.1% accuracy in open-ended drug
+                reasoning tasks, surpassing GPT-4o by up to 25.8% and
+                outperforming DeepSeek-R1 (671B) in structured multi-step
+                reasoning. TxAgent generalizes across drug name variants and
+                descriptions, maintaining a variance of &lt;0.01 between brand,
+                generic, and description-based drug references, exceeding
+                existing tool-use LLMs by over 55%. By integrating multi-step
+                inference, real-time knowledge grounding, and tool- assisted
+                decision-making, TxAgent ensures that treatment recommendations
+                align with established clinical guidelines and real-world
+                evidence, reducing the risk of adverse events and improving
+                therapeutic decision-making.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End paper abstract -->
+
+    <!-- Use TxAgent -->
+    <section class="hero is-small">
+      <div class="hero-body content-container">
+        <h2 class="title is-2 has-text-centered py-2">A Simple Guide to Using TxAgent</h2>
+        <div class="container is-centered has-text-centered is-max-desktop">
+          <section class="section hero is-light py-2">
+            <div class="hero-body has-text-left py-2">
+              <h2 class="has-text-weight-normal">
+                Install ToolUniverse: 
+                <code> pip install tooluniverse </code>
+                <br />
+                Install TxAgent:
+                <code> pip install txagent </code>
+                <br />
+                Run TxAgent demo/script:
+                <code> https://github.com/mims-harvard/TxAgent </code>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+    <!-- End use txagent -->
+
+    <!-- Model capabilities -->
+    <section class="hero is-small">
+      <div class="hero-body content-container">
+        <div class="container">
+          <h2 class="title is-2 has-text-centered">TxAgent capabilities</h2>
+          <div class="container is-centered has-text-centered">
+            <img
+              src="static/images/txagent_capabilities.jpg"
+              alt="TxAgent Capabilities"
+              style="height: auto; max-width: 50vw"
+              class="responsive-image"
+            />
+          </div>
+          <div class="container is-centered has-text-centered is-max-desktop">
+            <section class="section hero is-light py-2 content">
+              <div class="has-text-left py-2">
+                <ul>
+                  <li>
+                    <b>Knowledge grounding using tool calls</b>: TxAgent
+                    utilizes tools to obtain verified knowledge and provides
+                    outputs based on it.
+                  </li>
+                  <li>
+                    <b>Goal-oriented tool selection</b>: TxAgent proactively
+                    requests tools from ToolUniverse using the ToolRAG model and
+                    selects and applies the most suitable tool from the
+                    available candidates.
+                  </li>
+                  <li>
+                    <b>Problem solving with multi-step reasoning</b>: TxAgent
+                    manages complex tasks or unexpected responses from tools
+                    through multiple iterations of thought and function calls.
+                  </li>
+                  <li>
+                    <b>Leveraging constantly updated knowledge bases</b>:
+                    TxAgent accesses continuously updated databases via tools to
+                    handle problems that go beyond the TxAgent’s intrinsic
+                    knowledge.
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End model capabilities -->
+
+    <!-- Tool universe -->
+    <section class="hero is-small">
+      <div class="hero-body content-container">
+        <h2 class="title is-2 has-text-centered py-2">ToolUniverse</h2>
+        <!-- Image carousel -->
+        <section class="hero is-small">
+          <div class="hero-body">
+            <div class="container has-text-centered">
+              <div id="results-carousel" class="carousel results-carousel">
+                <div class="item">
+                  <!-- Your image here -->
+                  <img
+                    src="static/images/tool_openfda.jpg"
+                    alt="MY ALT TEXT"
+                    style="height: auto; max-width: 50vw"
+                  />
+                  <h2 class="subtitle has-text-centered">
+                    Tool example linked to OpenFDA.
+                  </h2>
+                </div>
+                <div class="item">
+                  <!-- Your image here -->
+                  <img
+                    src="static/images/tool_opentarget.jpg"
+                    alt="MY ALT TEXT"
+                    style="height: auto; max-width: 50vw"
+                  />
+                  <h2 class="subtitle has-text-centered">
+                    Tool example linked to OpenTarget.
+                  </h2>
+                </div>
+                <div class="item">
+                  <!-- Your image here -->
+                  <img
+                    src="static/images/tool_monarch.jpg"
+                    alt="MY ALT TEXT"
+                    style="height: auto; max-width: 50vw"
+                  />
+                  <h2 class="subtitle has-text-centered">
+                    Tool example linked to Monarch Initiative.
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End image carousel -->
+        <div class="container is-centered has-text-centered is-max-desktop">
+          <section class="section hero is-light py-2">
+            <div class="hero-body has-text-left py-2">
+              <h2 class="has-text-weight-normal">
+                ToolUniverse is a critical component of TxAgent, providing the
+                agent with the ability to access and leverage a vast array of
+                biomedical knowledge to solve complex therapeutic reasoning
+                tasks. ToolUniverse includes 211 biomedical tools that address
+                various aspects of drugs and diseases. These tools are linked to
+                trusted sources, including all US FDA-approved drugs since 1939
+                and validated clinical insights from Open Targets and Monarch
+                Initiative.
+                <br />
+                Install
+                <a href="https://github.com/mims-harvard/ToolUniverse/"
+                  >ToolUniverse</a
+                >
+                with one line of code:
+                <code> pip install tooluniverse </code>
+              </h2>
+            </div>
+          </section>
+        </div>
+        <div class="tooluniverse-wrapper">
+          <div id="tooluniverse-container"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End tool universe -->
+
+    <!-- Model training -->
+    <section class="hero is-small">
+      <div class="hero-body content-container">
+        <div class="container">
+          <h2 class="title is-2 has-text-centered">
+            Training TxAgent: TxAgent-instruct dataset
+          </h2>
+          <div class="container is-centered has-text-centered">
+            <img
+              src="static/images/txagent_train.jpg"
+              alt="TxAgent Capabilities"
+              style="height: auto; max-width: 50vw"
+              class="responsive-image"
+            />
+          </div>
+          <div class="container is-centered has-text-centered is-max-desktop">
+            <section class="section hero is-light py-2">
+              <div class="hero-body has-text-left py-2">
+                <h2 class="has-text-weight-normal">
+                  The multi-agent systems (i.e., ToolGen, QuestionGen, and
+                  TraceGen) construct the TxAgent-Instruct training dataset for
+                  instruction tuning LLM to achieve the capabilities of TxAgent.
+                  TxAgent-Instruct is a diverse, synthetic, multi-step reasoning
+                  and large-scale function call training dataset anchored in
+                  biomedical knowledge. It consists of 378,027
+                  instruction-tuning data samples, with each sample generated by
+                  breaking down complete reasoning traces into step-by-step
+                  training data. These samples are derived from 85,340
+                  multi-step reasoning traces, which collectively include
+                  177,626 reasoning steps and 281,695 function calls.
+                </h2>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End model training -->
+
+    <!-- Multi-agent system -->
+    <section class="hero is-small">
+      <div class="hero-body content-container">
+        <div class="container">
+          <h2 class="title is-2 has-text-centered">
+            Building TxAgent-Instruct: multi-agent systems
+          </h2>
+          <div class="container is-centered has-text-centered">
+            <img
+              src="static/images/multi-agent.jpg"
+              alt="TxAgent Capabilities"
+              style="height: auto; max-width: 50vw"
+              class="responsive-image"
+            />
+          </div>
+          <div class="container is-centered has-text-centered is-max-desktop">
+            <section class="section hero is-light py-2 content">
+              <div class="has-text-left py-2">
+                <ul>
+                  <li>
+                    <b>ToolGen</b>: A tool generation multi-agent system that
+                    transforms APIs into 211 agent-compatible tools, aggregating
+                    them into the ToolUniverse.
+                  </li>
+                  <li>
+                    <b>QuestionGen</b>: A question generation multi-agent system
+                    designed to extract critical information from documents
+                    (e.g., FDA drug documentation) and generate relevant
+                    questions.
+                  </li>
+                  <li>
+                    <b>TraceGen</b>: A reasoning trace generation multi-agent
+                    system, where a Helper agent and a Tool Provider module
+                    assist the Solver agent in generating step-by-step reasoning
+                    and function calls to solve a problem.
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End multi-agent system -->
+
+    <!-- DrugPC -->
+    <section class="hero is-small">
+      <div class="hero-body content-container">
+        <div class="container">
+          <h2 class="title is-2 has-text-centered">
+            Drug reasoning on 11 tasks
+          </h2>
+          <div class="container is-centered has-text-centered">
+            <img
+              src="static/images/drugpc-open-end.jpg"
+              alt="TxAgent Capabilities"
+              style="height: auto; max-width: 50vw"
+              class="responsive-image"
+            />
+          </div>
+          <div class="container is-centered has-text-centered is-max-desktop">
+            <section class="section hero is-light py-2">
+              <div class="hero-body has-text-left py-2">
+                <h2 class="has-text-weight-normal">
+                  DrugPC (Drug Prescribing Card) benchmark includes 3,168
+                  questions covering 11 common tasks related to drugs. TxAgent
+                  outperforms larger open-source LLMs and GPT-4 as well as
+                  existing tool-use LLMs across 11 tasks, excelling in both
+                  open-ended questions. These tasks cover various drug-related
+                  topics, including drug overview, ingredients, warnings and
+                  safety, dependence and abuse, dosage and administration, use
+                  in specific populations, pharmacology, clinical information,
+                  nonclinical toxicology, patient-focused information, and
+                  storage and supply.
+                </h2>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End DrugPC -->
+
+    <!-- TreatmentPC -->
+    <section class="hero is-small">
+      <div class="hero-body content-container">
+        <div class="container">
+          <h2 class="title is-2 has-text-centered">
+            Specialized treatment recommendations
+          </h2>
+          <div class="container is-centered has-text-centered">
+            <img
+              src="static/images/treatmentpc.jpg"
+              alt="TxAgent Capabilities"
+              style="height: auto; max-width: 50vw"
+              class="responsive-image"
+            />
+          </div>
+          <div class="container is-centered has-text-centered is-max-desktop">
+            <section class="section hero is-light py-2">
+              <div class="hero-body has-text-left py-2">
+                <h2 class="has-text-weight-normal">
+                  TreatmentPC (Treatment Prescribing Cards) benchmark includes
+                  456 questions regarding specialized treatment recommendations.
+                  While multiple indications can be applied to a single disease,
+                  patients with specific conditions—such as pregnancy or
+                  comorbidities—require specialized treatment approaches,
+                  including customized drug selection and dosage adjustments.
+                  The TreatmentPC benchmark is designed to evaluate such
+                  specialized treatment scenarios with questions that account
+                  for the varying application conditions of drugs.
+                  <br />
+                  TxAgnet outperforms larger LLMs such as GPT-4o and Llama
+                  3.1-70B-Instruct as well as tool-use LLMs in both open-ended
+                  and multiple-choice settings. TxAgent achieves superior
+                  performance compared to the full DeepSeek-R1 model (671B) and
+                  its two distilled versions based on Llama-3.1-8B and
+                  Llama-3.3-70B.
+                </h2>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End TreatmentPC -->
+
+    <!-- Demo -->
+    <section class="hero is-small">
+      <div class="hero-body content-container">
+        <h2 class="title is-2 has-text-centered py-2">TxAgent demos</h2>
+        <!-- Image carousel -->
+        <section class="hero is-small">
+          <div class="hero-body">
+            <div class="container has-text-centered">
+              <div id="results-carousel" class="carousel results-carousel">
+                <div class="item">
+                  <video
+                    poster=""
+                    id="tree"
+                    autoplay
+                    controls
+                    muted
+                    loop
+                    height="100%"
+                  >
+                    <!-- Your video here -->
+                    <source src="static/videos/q1.mov" type="video/mp4" />
+                  </video>
+                  <h2 class="subtitle has-text-centered">
+                    Demo 1: Treatment adjustments considering drug mechanism and
+                    patient condition.
+                  </h2>
+                </div>
+                <div class="item">
+                  <video
+                    poster=""
+                    id="tree"
+                    autoplay
+                    controls
+                    muted
+                    loop
+                    height="100%"
+                  >
+                    <!-- Your video here -->
+                    <source src="static/videos/q2.mov" type="video/mp4" />
+                  </video>
+                  <h2 class="subtitle has-text-centered">
+                    Demo2: Treatment adjustments considering the precise patient
+                    condition (e.g., changing the patient condition from
+                    moderate to severe hepatic impairment).
+                  </h2>
+                </div>
+                <div class="item">
+                  <video
+                    poster=""
+                    id="tree"
+                    autoplay
+                    controls
+                    muted
+                    loop
+                    height="100%"
+                  >
+                    <!-- Your video here -->
+                    <source src="static/videos/q3.mov" type="video/mp4" />
+                  </video>
+                  <h2 class="subtitle has-text-centered">
+                    Demo 3: Treatment selection considering drug-drug
+                    interactions.
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End image carousel -->
+        <div class="container is-centered has-text-centered is-max-desktop">
+          <section class="section hero is-light py-2">
+            <div class="hero-body has-text-left py-2">
+              <h2 class="has-text-weight-normal">
+                Get code in
+                <a href="https://github.com/mims-harvard/TxAgent/">TxAgent</a>!
+                Lauch the TxAgent demo to see how TxAgent can assist in
+                therapeutic reasoning across a universe of tools.
+              </h2>
+            </div>
+          </section>
+        </div>
+        <div class="tooluniverse-wrapper">
+          <div id="tooluniverse-container"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Demo -->
+
+    <!--BibTex citation -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>BibTex Code Here</code></pre>
+      </div>
+    </section>
+    <!--End BibTex citation -->
+
+        <!--BibTex citation -->
+        <section class="section" id="BibTeX">
+          <div class="container is-max-desktop content">
+            <h2 class="title">Concat</h2>
+            <p>If you have any questions or suggestions, please email 
+              <a href="mailto:shanghuagao@gmail.com">Shanghua Gao</a> and 
+              <a href="mailto:marinka@hms.harvard.edu">Marinka Zitnik</a>.
+            </p>
+          </div>
+        </section>
+        <!--End BibTex citation -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This page was built using the
+                <a
+                  href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                  target="_blank"
+                  >Academic Project Page Template</a
+                >
+                which was adopted from the <a
+                  href="https://nerfies.github.io"
+                  target="_blank"
+                  >Nerfies</a
+                > project page. You are free to borrow the source code of this
+                website, we just ask that you link back to this page in the
+                footer. <br />
+                This website is licensed under a
+                <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/"
+                  target="_blank"
+                  >Creative Commons Attribution-ShareAlike 4.0 International
+                  License</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+  const dataDict = {
+    "Adverse Events, Risks, Safety": {
+      "Adverse Events and Alarms": [
+        "get_drug_adverse_events_by_chemblId",
+        "get_drug_name_by_adverse_reaction",
+        "get_adverse_reactions_by_drug_name",
+        "get_drug_names_by_alarm",
+        "get_alarms_by_drug_name",
+      ],
+      "Warnings and Risks": [
+        "get_drug_warnings_by_chemblId",
+        "get_drug_names_by_boxed_warning",
+        "get_boxed_warning_info_by_drug_name",
+        "get_drug_name_by_warnings",
+        "get_warnings_by_drug_name",
+        "get_warnings_and_cautions_by_drug_name",
+        "get_drug_names_by_warnings_and_cautions",
+        "get_drug_names_by_risk",
+        "get_risk_info_by_drug_name",
+        "get_user_safety_warning_by_drug_names",
+        "get_drug_names_by_user_safety_warning",
+        "get_drug_names_by_food_safety_warnings",
+        "get_drug_withdrawn_blackbox_status_by_chemblId",
+      ],
+      "Nonclinical Toxicology": [
+        "get_drug_names_by_nonclinical_toxicology_info",
+        "get_nonclinical_toxicology_info_by_drug_name",
+      ],
+      "Carcinogenic, Mutagenic, Fertility, Impairment Info": [
+        "get_drug_names_by_carcinogenic, mutagenic, fertility, impairment_info",
+        "get_carcinogenic, mutagenic, fertility, impairment_info_by_drug_name",
+      ],
+      "Other Safety Info": [
+        "get_drug_name_by_other_safety_info",
+        "get_other_safety_info_by_drug_name",
+      ],
+      "Safety Summary": [
+        "get_drug_names_by_safety_summary",
+        "get_safety_summary_by_drug_name",
+      ],
+      Contraindications: [
+        "get_drug_names_by_contraindications",
+        "get_contraindications_by_drug_name",
+        "get_do_not_use_info_by_drug_name",
+      ],
+      Precautions: [
+        "get_drug_names_by_general_precautions",
+        "get_general_precautions_by_drug_name",
+        "get_drug_name_by_precautions",
+        "get_precautions_by_drug_name",
+      ],
+      "Nonteratogenic Effects": [
+        "get_drug_names_by_nonteratogenic_effects",
+        "get_nonteratogenic_effects_by_drug_name",
+      ],
+      "Teratogenic Effects": [
+        "get_drug_names_by_teratogenic_effects",
+        "get_teratogenic_effects_by_drug_name",
+      ],
+      "Overdosage Info": [
+        "get_drug_names_by_overdosage_info",
+        "get_overdosage_info_by_drug_name",
+      ],
+      "Stop Use Info": [
+        "get_drug_name_by_stop_use_info",
+        "get_stop_use_info_by_drug_name",
+      ],
+      "Lab Test Interference": [
+        "get_drug_names_by_lab_test_interference",
+        "get_lab_test_interference_info_by_drug_name",
+      ],
+      "Residue Warning": [
+        "get_drug_names_by_residue_warning",
+        "get_residue_warning_by_drug_name",
+      ],
+      "Environmental Warning": [
+        "get_drug_name_by_environmental_warning",
+        "get_environmental_warning_by_drug_name",
+      ],
+      "Target Safety Profile": ["get_target_safety_profile_by_ensemblID"],
+    },
+    "Addiction and Abuse": {
+      "Drug Abuse": [
+        "get_drug_names_by_abuse_info",
+        "get_abuse_info_by_drug_name",
+        "get_drug_name_by_abuse_types_and_related_adverse_reactions_and_controlled_substance_status",
+        "get_abuse_types_and_related_adverse_reactions_and_controlled_substance_status_by_drug_name",
+      ],
+      "Drug Dependence": [
+        "get_drug_name_by_dependence_info",
+        "get_dependence_info_by_drug_name",
+      ],
+      "Controlled Substance": [
+        "get_drug_names_by_controlled_substance_DEA_schedule",
+        "get_controlled_substance_DEA_schedule_info_by_drug_name",
+        "get_drug_name_by_abuse_types_and_related_adverse_reactions_and_controlled_substance_status",
+        "get_abuse_types_and_related_adverse_reactions_and_controlled_substance_status_by_drug_name",
+      ],
+    },
+    "Drug Patient Populations": {
+      Pregnancy: [
+        "get_drug_names_by_pregnancy_effects_info",
+        "get_pregnancy_effects_info_by_drug_name",
+        "get_drug_name_by_pregnancy_or_breastfeeding_info",
+        "get_pregnancy_or_breastfeeding_info_by_drug_name",
+        "get_drug_name_by_labor_and_delivery_info",
+        "get_labor_and_delivery_info_by_drug_name",
+        "get_drug_names_by_teratogenic_effects",
+        "get_teratogenic_effects_by_drug_name",
+      ],
+      "Nursing Mother": [
+        "get_drug_names_by_info_for_nursing_mothers",
+        "get_info_for_nursing_mothers_by_drug_name",
+        "get_drug_name_by_pregnancy_or_breastfeeding_info",
+        "get_pregnancy_or_breastfeeding_info_by_drug_name",
+      ],
+      "Pediatric Use": [
+        "get_drug_names_by_pediatric_use",
+        "get_pediatric_use_info_by_drug_name",
+        "get_drug_names_by_child_safety_info",
+        "get_child_safety_info_by_drug_name",
+      ],
+      "General Patient Pop. Info": [
+        "get_drug_names_by_population_use",
+        "get_population_use_info_by_drug_name",
+      ],
+      "Geriatric Use": [
+        "get_drug_names_by_geriatric_use",
+        "get_geriatric_use_info_by_drug_name",
+      ],
+    },
+    "Drug Administration and Handling": {
+      Storage: [
+        "get_drug_name_by_storage_and_handling_info",
+        "get_storage_and_handling_info_by_drug_name",
+        "get_dosage_and_storage_information_by_drug_name",
+      ],
+      "Safe Handling": [
+        "get_drug_names_by_safe_handling_warning",
+        "get_safe_handling_warnings_by_drug_name",
+      ],
+      Disposal: [
+        "get_drug_names_by_disposal_info",
+        "get_disposal_info_by_drug_name",
+      ],
+      Dosing: [
+        "get_drug_name_by_dosage_info",
+        "get_drug_names_by_dosage_forms_and_strengths_info",
+        "get_dosage_forms_and_strengths_by_drug_name",
+        "get_dosage_and_storage_information_by_drug_name",
+      ],
+      "Route of Administration": [
+        "get_drug_names_by_route",
+        "get_route_info_by_drug_name",
+      ],
+      "Setup Instructions": [
+        "get_drug_names_by_assembly_installation_info",
+        "get_assembly_installation_info_by_drug_name",
+        "get_drug_name_by_calibration_instructions",
+        "get_calibration_instructions_by_drug_name",
+      ],
+      "General Instructions": [
+        "get_drug_names_by_instructions_for_use",
+        "get_instructions_for_use_by_drug_name",
+      ],
+      Accessories: [
+        "get_drug_names_by_accessories",
+        "get_accessories_info_by_drug_name",
+      ],
+      "Assoc. Devices": [
+        "get_drug_name_by_device_use",
+        "get_device_use_by_drug_name",
+      ],
+    },
+    Pharmacology: {
+      Pharmacokinetics: [
+        "get_drug_names_by_pharmacokinetics",
+        "get_pharmacokinetics_by_drug_name",
+      ],
+      Pharmacodynamics: [
+        "get_drug_name_by_pharmacodynamics",
+        "get_pharmacodynamics_by_drug_name",
+      ],
+      "Clinical Pharmacology": [
+        "get_drug_names_by_clinical_pharmacology",
+        "get_clinical_pharmacology_by_drug_name",
+      ],
+      "Animal Pharmacology": [
+        "get_drug_names_by_animal_pharmacology_info",
+        "get_animal_pharmacology_info_by_drug_name",
+      ],
+    },
+    "Drug Use, Mechanism, Composition": {
+      "Mechanism of Action": [
+        "get_mechanism_of_action_by_drug_name",
+        "get_drug_names_by_mechanism_of_action",
+        "get_drug_mechanisms_of_action_by_chemblId",
+      ],
+      Ingredients: [
+        "get_active_ingredient_info_by_drug_name",
+        "get_drug_names_by_active_ingredient",
+        "get_drug_name_by_inactive_ingredient",
+        "get_inactive_ingredient_info_by_drug_name",
+        "get_drug_names_by_ingredient",
+        "get_ingredients_by_drug_name",
+        "get_active_ingredient_application_number_manufacturer_name_NDC_number_administration_route_by_drug_name",
+      ],
+      Indication: [
+        "get_drug_names_by_indication",
+        "get_indications_by_drug_name",
+        "get_drug_indications_by_chemblId",
+        "get_approved_indications_by_drug_chemblId",
+        "get_purpose_info_by_drug_name",
+      ],
+    },
+    "ID and Labeling Tools": {
+      "Drug Name/Description and ID Map": [
+        "get_brand_name_generic_name",
+        "get_drug_synonyms_by_chemblId",
+        "get_drug_trade_names_by_chemblId",
+        "get_drug_description_by_chemblId",
+        "get_drug_id_description_by_name",
+        "get_known_drugs_by_drug_chemblId",
+      ],
+      "Drug Label Document and Set IDs": [
+        "get_drug_name_by_document_id",
+        "get_document_id_by_drug_name",
+        "get_drug_name_by_set_id",
+        "get_drug_name_by_application_number_NUI_identifier_SPL_document_ID_SPL_set_ID",
+      ],
+      "Disease Name/Description and ID Map": [
+        "get_disease_synonyms_by_efoId",
+        "get_disease_id_description_by_name",
+        "get_disease_description_by_efoId",
+        "get_drug_name_by_set_id",
+      ],
+      "Target Name/Description and ID Map": [
+        "get_target_id_description_by_name",
+        "get_target_synonyms_by_ensemblID",
+      ],
+      "App Num., Manufacturer Name, Other IDs": [
+        "get_active_ingredient_application_number_manufacturer_name_NDC_number_administration_route_by_drug_name",
+        "get_drug_names_by_application_number_manufacturer_name_NDC_number",
+        "get_drug_name_by_application_number_NUI_identifier_SPL_document_ID_SPL_set_ID",
+      ],
+      "Phenotype Name and ID Map": [
+        "get_phenotype_by_HPO_ID",
+        "get_HPO_ID_by_phenotype",
+      ],
+    },
+    "General Clinical Annotations": {
+      "SPL Indexing Data Elements and Unclassified Section": [
+        "get_drug_names_by_spl_indexing_data_elements",
+        "get_spl_indexing_data_elements_by_drug_name",
+        "get_spl_unclassified_section_by_drug_name",
+      ],
+      "Label Effective Time": [
+        "get_drug_names_by_effective_time",
+        "get_effective_time_by_drug_name",
+      ],
+      "Approval Status": ["get_drug_approval_status_by_chemblId"],
+      "Dear Health Care Provider Letter and Recent Changes": [
+        "get_dear_health_care_provider_letter_info_by_drug_name",
+        "get_drug_names_by_dear_health_care_provider_letter_info",
+        "get_recent_changes_by_drug_name",
+      ],
+      "Health Claims": [
+        "get_drug_names_by_health_claim",
+        "get_health_claims_by_drug_name",
+      ],
+      "Questions Contact": ["get_contact_for_questions_info_by_drug_name"],
+    },
+    "Clinical Laboratory Info": {
+      "Lab Tests": [
+        "get_drug_names_by_lab_tests",
+        "get_lab_tests_by_drug_name",
+      ],
+      Microbiology: [
+        "get_drug_name_by_microbiology",
+        "get_microbiology_info_by_drug_name",
+      ],
+    },
+    "General Info for Patients and Relatives": {
+      "Consult Doctor/Pharmacist": [
+        "get_drug_name_by_info_on_doctor_consultation",
+        "get_info_on_doctor_consultation_by_drug_name",
+        "get_drug_names_by_info_on_consulting_doctor, pharmacist_for_drug_interactions",
+        "get_info_on_consulting_doctor, pharmacist_for_drug_interactions_by_drug_name",
+      ],
+      "Info for Owners/Caregivers": [
+        "get_drug_names_by_information_for_owners_or_caregivers",
+        "get_information_for_owners_or_caregivers_by_drug_name",
+      ],
+      "Drug Info for Patients": [
+        "get_info_for_patients_by_drug_name",
+        "get_drug_name_by_principal_display_panel",
+        "get_principal_display_panel_by_drug_name",
+        "get_drug_names_by_medication_guide",
+        "get_medication_guide_info_by_drug_name",
+        "get_drug_name_from_patient_package_insert",
+        "get_patient_package_insert_from_drug_name",
+        "get_drug_names_by_patient_medication_info",
+        "get_patient_medication_info_by_drug_name",
+        "get_when_using_info",
+      ],
+      "Avoid While Using Drug": ["get_when_using_info"],
+    },
+    "Disease, Phenotype, Target, Drug Links": {
+      "Drug-Disease Associations": [
+        "get_similar_entities_by_drug_chemblId",
+        "get_similar_entities_by_disease_efoId",
+        "get_assoc._drugs_by_disease_efoId",
+        "get_assoc._diseases_by_drug_chemblId",
+      ],
+      "Drug-Target Associations": [
+        "get_similar_entities_by_drug_chemblId",
+        "get_similar_entities_by_target_ensemblID",
+        "get_assoc._drugs_by_target_ensemblID",
+        "get_assoc._targets_by_drug_chemblId",
+      ],
+      "Target-Disease/Phenotype Associations": [
+        "get_similar_entities_by_target_ensemblID",
+        "get_similar_entities_by_disease_efoId",
+        "get_assoc._diseases_by_target_ensemblID",
+        "get_assoc._targets_by_disease_efoId",
+        "get_assoc._diseases_phenotypes_by_target_ensemblID",
+      ],
+      "Disease-Disease/Phenotype Associations": [
+        "get_similar_entities_by_disease_efoId",
+        "get_joint_assoc._diseases_by_HPO_ID_list",
+        "get_assoc._phenotypes_by_disease_efoId",
+      ],
+      "Target-Target Associations": [
+        "get_target_homologues_by_ensemblID",
+        "get_similar_entities_by_target_ensemblID",
+        "get_target_interactions_by_ensemblID",
+      ],
+      "Drug-Drug Associations": [
+        "get_drug_names_by_drug_interactions",
+        "get_drug_interactions_by_drug_name",
+        "get_similar_entities_by_drug_chemblId",
+      ],
+      Pharmacogenomics: [
+        "drug_pharmacogenomics_data",
+        "get_drug_name_by_pharmacogenomics",
+        "get_pharmacogenomics_info_by_drug_name",
+      ],
+    },
+    "Biological Annotation Tools": {
+      "Target Biological Annotation": [
+        "get_target_gene_ontology_by_ensemblID",
+        "get_target_genomic_location_by_ensemblID",
+        "get_target_subcellular_locations_by_ensemblID",
+        "get_target_classes_by_ensemblID",
+        "get_biological_mouse_models_by_ensemblID",
+      ],
+      "Disease Biological Annotation": [
+        "get_disease_therapeutic_areas_by_efoId",
+        "get_disease_ancestors_parents_by_efoId",
+        "get_disease_descendants_children_by_efoId",
+        "get_disease_locations_by_efoId",
+      ],
+      "Gene Ontology": [
+        "get_gene_ontology_terms_by_goID",
+        "get_target_gene_ontology_by_ensemblID",
+      ],
+      "Drug Parent Child Molecules": [
+        "get_parent_child_molecules_by_drug_chembl_ID",
+      ],
+    },
+    Publications: {
+      Publications: [
+        "get_publications_by_disease_efoId",
+        "get_publications_by_target_ensemblID",
+        "get_publications_by_drug_chemblId",
+      ],
+      "Clinical Studies": [
+        "get_drug_names_by_clinical_studies",
+        "get_clinical_studies_info_by_drug_name",
+      ],
+      "Reference Documents": [
+        "get_drug_name_by_reference",
+        "get_reference_info_by_drug_name",
+      ],
+    },
+    Search: {
+      "Search Tools": [
+        "multi_entity_search_by_query_string",
+        "search_category_counts_by_query_string",
+      ],
+    },
+    "Target Characterization": {
+      "Target Therapeutic Potential": [
+        "get_target_tractability_by_ensemblID",
+        "get_target_enabling_packages_by_ensemblID",
+        "get_chemical_probes_by_target_ensemblID",
+        "get_target_constraint_info_by_ensemblID",
+      ],
+    },
+  };
+  function toSentenceCase(str) {
+    // Replace underscores with spaces and convert the entire string to lowercase.
+    let formatted = str.replace(/_/g, " ").toLowerCase();
+    // Capitalize only the first letter.
+    formatted = formatted.charAt(0).toUpperCase() + formatted.slice(1);
+    // Ensure "ID" stays properly capitalized.
+    formatted = formatted.replace(/chemblid/gi, "ChEMBL ID");
+    formatted = formatted.replace(/ensemblid/gi, "Ensembl ID");
+    formatted = formatted.replace(/efoid/gi, "EFO ID");
+    formatted = formatted.replace(/hpo/gi, "HPO");
+    formatted = formatted.replace(/ids/gi, "IDs");
+    formatted = formatted.replace(
+      /application number nui identifier spl document id spl set id/gi,
+      "app. number, NUI identifier, SPL doc. ID, SPL set ID"
+    );
+    formatted = formatted.replace(
+      /Get active ingredient application number manufacturer name ndc number administration route/gi,
+      "get active ingredient, app. num., manufacturer, NDC num., administration"
+    );
+    formatted = formatted.replace(
+      /Get drug name by application number manufacturer name ndc number/gi,
+      "get drug name by app. number, manufacturer, NDC number"
+    );
+    formatted = formatted.replace(/goID/gi, "GO ID");
+    formatted = formatted.replace(
+      /controlled substance dea schedule/gi,
+      "DEA schedule"
+    );
+    formatted = formatted.replace(/spl/gi, "SPL");
+
+    return formatted.replace(/\bId\b/gi, "ID");
+  }
+
+  // Global variables to manage drill-down state.
+  let currentLevel = 1; // 1 for Tier 1, 2 for Tier 2, 3 for Tier 3.
+  let currentTier1 = null; // Holds the key for the current top-level slice.
+  let chart; // To store the Highcharts chart instance.
+  let currentTier1Color = null;
+  let currentTier2Color = null;
+
+  // Sorted data structure
+  let sortedDataDict = {};
+
+  // Function to sort dataDict by the total number of Tier 3 values
+  function sortDataDict() {
+    // Calculate totals for each Tier 1 key
+    const tier1Totals = {};
+
+    for (const topKey in dataDict) {
+      let total = 0;
+      const tier2Totals = {};
+
+      // Calculate totals for each Tier 2 key within this Tier 1
+      for (const subKey in dataDict[topKey]) {
+        const count = dataDict[topKey][subKey].length;
+        tier2Totals[subKey] = count;
+        total += count;
+      }
+
+      tier1Totals[topKey] = {
+        total: total,
+        tier2Totals: tier2Totals,
+      };
+    }
+
+    // Sort Tier 1 keys by total count (descending)
+    const sortedTier1Keys = Object.keys(tier1Totals).sort(
+      (a, b) => tier1Totals[b].total - tier1Totals[a].total
+    );
+
+    // Build the sorted data structure
+    sortedDataDict = {};
+
+    for (const topKey of sortedTier1Keys) {
+      sortedDataDict[topKey] = {};
+
+      // Sort Tier 2 keys by their individual counts (descending)
+      const tier2Totals = tier1Totals[topKey].tier2Totals;
+      const sortedTier2Keys = Object.keys(tier2Totals).sort(
+        (a, b) => tier2Totals[b] - tier2Totals[a]
+      );
+
+      // Add sorted Tier 2 keys with their values
+      for (const subKey of sortedTier2Keys) {
+        sortedDataDict[topKey][subKey] = dataDict[topKey][subKey];
+      }
+    }
+
+    return sortedDataDict;
+  }
+
+  // Function to load Tier 1 data (top-level slices) with an outer ring showing Tier 2 subcategories.
+  function loadTier1() {
+    currentLevel = 1;
+    currentTier1 = null;
+    const newData = [];
+
+    // Create the central node.
+    newData.push({
+      id: "root",
+      name: "ToolUniverse",
+      value: 1, // inner slice made very small.
+      color: "skyblue",
+    });
+
+    let index = 1;
+    // For each top-level key, create a Tier 1 slice and add an outer ring (level 3) for its Tier 2 subcategories.
+    for (const topKey in sortedDataDict) {
+      // Calculate total value as the sum of all Tier 2 subcategory counts.
+      let total = 0;
+      const tier2Obj = sortedDataDict[topKey];
+      for (const subKey in tier2Obj) {
+        total += tier2Obj[subKey].length;
+      }
+
+      // Set a specific color for Tier 1 (cycling through chart colors)
+      const color =
+        chart.options.colors[(index - 1) % chart.options.colors.length];
+
+      // Tier 1 slice (level 2).
+      const tier1Id = "tier1_" + index;
+      newData.push({
+        id: tier1Id,
+        parent: "root",
+        name: toSentenceCase(topKey),
+        value: total,
+        originalKey: topKey,
+        color: color,
+      });
+
+      // Level 3: For each Tier 2 category, add a slice whose width is proportional to its item count.
+      let tier2Index = 1;
+      for (const subKey in tier2Obj) {
+        newData.push({
+          id: tier1Id + "_tier2_" + tier2Index,
+          parent: tier1Id,
+          name: "", // no label for the outer ring
+          // Set value proportional to the number of items in the subcategory.
+          value: tier2Obj[subKey].length,
+          originalKey: subKey,
+          color: Highcharts.color(color).brighten(0.1).get(),
+          dataLabels: { enabled: false },
+        });
+        tier2Index++;
+      }
+
+      index++;
+    }
+    chart.series[0].setData(newData, true);
+    chart.setTitle({ text: "ToolUniverse" });
+  }
+
+  // Function to load Tier 2 data (second-level slices) with an outer ring showing the number of Tier 3 items.
+  function loadTier2(topKey) {
+    currentLevel = 2;
+    currentTier1 = topKey;
+    const newData = [];
+
+    // Central node is now the Tier 1 label.
+    newData.push({
+      id: "root",
+      name: toSentenceCase(topKey),
+      value: 1,
+      color: Highcharts.color(currentTier1Color).brighten(-0.05).get(),
+    });
+
+    let index = 1;
+    const secondLevelObj = sortedDataDict[topKey];
+
+    // Define a maximum brighten value (adjust as needed)
+    const maxBrighten = 0.2;
+    const brightenStep =
+      Object.keys(secondLevelObj).length > 1
+        ? maxBrighten / (Object.keys(secondLevelObj).length - 1)
+        : 0;
+
+    // For each Tier 2 category, add a slice (level 2) and then an outer ring (level 3) for its Tier 3 items.
+    for (const subKey in secondLevelObj) {
+      const parentColor = Highcharts.color(currentTier1Color)
+        .brighten(brightenStep * index)
+        .get();
+      const tier2Id = "tier2_" + index;
+      newData.push({
+        id: tier2Id,
+        parent: "root",
+        name: toSentenceCase(subKey),
+        value: secondLevelObj[subKey].length,
+        originalKey: subKey,
+        color: parentColor,
+      });
+
+      // Level 3: for each Tier 3 item under this Tier 2 category.
+      let tier3Index = 1;
+      const children = secondLevelObj[subKey];
+      for (const item of children) {
+        newData.push({
+          id: tier2Id + "_tier3_" + tier3Index,
+          parent: tier2Id,
+          name: "", // no label for the outer ring
+          value: 1, // each Tier 3 item is given a unit value (adjust if needed)
+          originalKey: item,
+          color: Highcharts.color(parentColor).brighten(0.1).get(),
+          dataLabels: { enabled: false },
+        });
+        tier3Index++;
+      }
+      index++;
+    }
+    chart.series[0].setData(newData, true);
+    chart.setTitle({ text: "ToolUniverse: " + toSentenceCase(topKey) });
+  }
+
+  // Function to load Tier 3 data (third-level slices).
+  // (Since Tier 3 is the lowest level, we keep its configuration unchanged.)
+  function loadTier3(topKey, subKey) {
+    currentLevel = 3;
+    const newData = [];
+    // Central node is now the Tier 2 label.
+    newData.push({
+      id: "root",
+      name: toSentenceCase(subKey),
+      value: 1,
+      color: Highcharts.color(currentTier2Color).brighten(-0.05).get(),
+    });
+    let index = 1;
+    const children = sortedDataDict[topKey][subKey];
+
+    const maxBrighten = 0.2;
+    const brightenStep =
+      children.length > 1 ? maxBrighten / (children.length - 1) : 0;
+
+    for (const item of children) {
+      newData.push({
+        id: "tier3_" + index,
+        parent: "root",
+        name: toSentenceCase(item),
+        value: 1,
+        originalKey: item,
+        color: Highcharts.color(currentTier2Color)
+          .brighten(brightenStep * index)
+          .get(),
+      });
+      index++;
+    }
+    chart.series[0].setData(newData, true);
+    chart.setTitle({ text: "ToolUniverse: " + toSentenceCase(subKey) });
+  }
+
+  // Render the initial 3-level sunburst chart.
+  chart = Highcharts.chart("tooluniverse-container", {
+    chart: {
+      height: "100%",
+    },
+    title: {
+      text: "ToolUniverse",
+    },
+    series: [
+      {
+        type: "sunburst",
+        data: [], // Data will be loaded via loadTier1().
+        // We assign colors manually.
+        colorByPoint: false,
+        allowDrillToNode: false,
+        dataLabels: {
+          format: "{point.name}",
+          distance: 20,
+          style: {
+            fontSize: "10px",
+            textAlign: "center",
+            width: "80px",
+            whiteSpace: "normal",
+            textOutline: "none",
+            color: "#000000",
+          },
+          rotation: "auto",
+        },
+        // Configure levels:
+        levels: [
+          {
+            level: 1,
+            levelSize: { unit: "pixels", value: 40 },
+          },
+          {
+            level: 2,
+            levelSize: { unit: "percentage", value: 70 },
+          },
+          {
+            level: 3,
+            levelSize: { unit: "pixels", value: 15 },
+            dataLabels: { enabled: false },
+          },
+        ],
+        // Define click events on individual slices.
+        point: {
+          events: {
+            click: function () {
+              // If the central node is clicked, drill up.
+              if (this.id === "root") {
+                if (currentLevel === 2) {
+                  loadTier1();
+                } else if (currentLevel === 3) {
+                  loadTier2(currentTier1);
+                }
+              } else {
+                // Drill down based on the current level.
+                if (
+                  currentLevel === 1 &&
+                  sortedDataDict[this.options.originalKey]
+                ) {
+                  currentTier1Color = this.color;
+                  loadTier2(this.options.originalKey);
+                } else if (
+                  currentLevel === 2 &&
+                  currentTier1 &&
+                  sortedDataDict[currentTier1][this.options.originalKey]
+                ) {
+                  currentTier2Color = this.color;
+                  loadTier3(currentTier1, this.options.originalKey);
+                }
+              }
+            },
+          },
+        },
+      },
+    ],
+    tooltip: {
+      headerFormat: "",
+      pointFormat: "<b>{point.name}</b>",
+    },
+    colors: [
+      "#FFA15A",
+      "#636efa",
+      "#ab63fa",
+      "#FF6692",
+      "#EF553B",
+      "#00cc96",
+      "#B6E880",
+      "#19d3f3",
+      "#f2ce3f",
+    ],
+  });
+
+  // First, sort the data dictionary.
+  sortDataDict();
+
+  // Load the initial top-level (Tier 1) view.
+  loadTier1();
+</script>
