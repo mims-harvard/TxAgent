@@ -359,7 +359,7 @@ class TxAgent:
             return revised_messages, existing_tools_prompt, special_tool_call
 
     def get_answer_based_on_unfinished_reasoning(self, conversation, temperature, max_new_tokens, max_token, outputs=None, return_full_thought=False):
-        if conversation[-1]['role'] == 'assisant':
+        if conversation[-1]['role'] == 'assistant':
             conversation.append(
                 {'role': 'tool', 'content': 'Errors happen during the function call, please come up with the final answer with the current information.'})
         finish_tools_prompt = self.add_finish_tools([])
