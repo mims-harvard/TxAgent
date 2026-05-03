@@ -3,7 +3,9 @@ import os
 import sys
 import json
 import gc
+import logging
 import numpy as np
+import torch
 from vllm import LLM, SamplingParams
 from jinja2 import Template
 from typing import List
@@ -13,6 +15,8 @@ from gradio import ChatMessage
 from .toolrag import ToolRAGModel
 
 from .utils import NoRepeatSentenceProcessor, ReasoningTraceChecker, tool_result_format
+
+logger = logging.getLogger(__name__)
 
 
 class TxAgent:
