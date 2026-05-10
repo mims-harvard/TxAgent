@@ -1,18 +1,32 @@
-import gradio as gr
+from __future__ import annotations
+
 import os
 import sys
 import json
 import gc
 import numpy as np
-from vllm import LLM, SamplingParams
 from jinja2 import Template
 from typing import List
 import types
-from tooluniverse import ToolUniverse
-from gradio import ChatMessage
 from .toolrag import ToolRAGModel
 
 from .utils import NoRepeatSentenceProcessor, ReasoningTraceChecker, tool_result_format
+
+
+def _missing_dependency_message(package_name, install_hint=None):
+    install_text = install_hint or package_name
+    return (
+        f"{package_name} is required for this operation but is not installed. "
+        f"Install it with `pip install {install_text}` and retry."
+    )
+
+
+def _get_chat_message_class():
+    try:
+        from gradio import ChatMessage
+    except ImportError as exc:
+        raise ImportError(_missing_dependency_message("gradio")) from exc
+    return ChatMessage
 
 
 class TxAgent:
@@ -71,6 +85,11 @@ class TxAgent:
             print(f"{attr}: {value}")
 
     def load_models(self, model_name=None):
+        try:
+            from vllm import LLM
+        except ImportError as exc:
+            raise ImportError(_missing_dependency_message("vllm")) from exc
+
         if model_name is not None:
             if model_name == self.model_name:
                 return f"The model {model_name} is already loaded."
@@ -83,6 +102,11 @@ class TxAgent:
         return f"Model {model_name} loaded successfully."
 
     def load_tooluniverse(self):
+        try:
+            from tooluniverse import ToolUniverse
+        except ImportError as exc:
+            raise ImportError(_missing_dependency_message("tooluniverse")) from exc
+
         self.tooluniverse = ToolUniverse(tool_files=self.tool_files_dict)
         self.tooluniverse.load_tools()
         special_tools = self.tooluniverse.prepare_tool_prompts(
@@ -275,6 +299,7 @@ class TxAgent:
                                  temperature=None,
                                  return_gradio_history=True):
 
+        ChatMessage = _get_chat_message_class() if return_gradio_history else None
         function_call_json, message = self.tooluniverse.extract_function_call_json(
             fcall_str, return_message=return_message, verbose=False)
         call_results = []
@@ -359,7 +384,7 @@ class TxAgent:
             return revised_messages, existing_tools_prompt, special_tool_call
 
     def get_answer_based_on_unfinished_reasoning(self, conversation, temperature, max_new_tokens, max_token, outputs=None, return_full_thought=False):
-        if conversation[-1]['role'] == 'assisant':
+        if conversation[-1]['role'] == 'assistant':
             conversation.append(
                 {'role': 'tool', 'content': 'Errors happen during the function call, please come up with the final answer with the current information.'})
         finish_tools_prompt = self.add_finish_tools([])
@@ -498,6 +523,11 @@ class TxAgent:
                   output_begin_string=None, max_new_tokens=2048,
                   max_token=None, skip_special_tokens=True,
                   model=None, tokenizer=None, terminators=None, seed=None, check_token_status=False):
+
+        try:
+            from vllm import SamplingParams
+        except ImportError as exc:
+            raise ImportError(_missing_dependency_message("vllm")) from exc
 
         if model is None:
             model = self.model
@@ -763,7 +793,7 @@ Generate **one summarized sentence** about "function calls' responses" with nece
                         max_new_tokens: int,
                         max_token: int,
                         call_agent: bool,
-                        conversation: gr.State,
+                        conversation,
                         max_round: int = 20,
                         seed: int = None,
                         call_agent_level: int = 0,
@@ -778,6 +808,7 @@ Generate **one summarized sentence** about "function calls' responses" with nece
         Returns:
             str: The generated response.
         """
+        ChatMessage = _get_chat_message_class()
         print("\033[1;32;40mstart\033[0m")
         print("len(message)", len(message))
         if len(message) <= 10:
