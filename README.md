@@ -139,6 +139,11 @@ Please visit [project page](https://github.com/mims-harvard/TxAgent) for more de
 ![Demo1](img/q2.gif)
 ![Demo1](img/q3.gif)
 
+## Troubleshooting
+
+- [RAG reliability checklist](docs/rag_reliability_checklist.md): debugging
+  steps for shallow answers, missing tool calls, and evidence mismatches.
+
 
 ## Citation
 
