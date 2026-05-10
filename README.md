@@ -118,6 +118,25 @@ pip install txagent
 python run_example.py
 ```
 
+### ToolRAG embedding cache
+
+On the first run, TxAgent builds a local ToolRAG embedding cache for the
+currently loaded ToolUniverse tools. The cache filename is derived from the RAG
+model name and a hash of the tool descriptions, for example:
+
+```
+ToolRAG-T1-GTE-Qwen2-1.5Btool_embedding_<hash>.pt
+```
+
+If this file is missing, TxAgent should regenerate it during
+`load_tool_desc_embedding()` and save it in the current working directory. If
+you see a `FileNotFoundError` for this file:
+
+- run TxAgent from a directory where the process has write permission
+- make sure ToolUniverse loads successfully before the embedding cache step
+- delete a partial or stale `ToolRAG-T1-GTE-Qwen2-1.5Btool_embedding_*.pt` file
+  and rerun the example to rebuild the cache
+
 **Run the gradio demo**:
 
 ```
