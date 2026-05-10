@@ -87,6 +87,25 @@ By integrating multi-step inference, real-time knowledge grounding, and tool- as
 - ToolUniverse requires a device with an internet connection.
 ```
 
+### GPU memory and vLLM notes
+
+The default examples load the TxAgent model through `agent.load_models()`, which
+uses vLLM's default single-process configuration. On machines with less GPU
+memory, users may need to initialize vLLM manually with deployment-specific
+options such as `tensor_parallel_size`, `max_model_len`, or
+`gpu_memory_utilization`, then assign the loaded model back to `agent.model`.
+
+When using a custom vLLM initialization path, make sure the rest of the TxAgent
+runtime is still initialized before calling `run_multistep_agent()`:
+
+- call `agent.load_tooluniverse()`
+- call `agent.load_tool_desc_embedding()`
+- set `agent.chat_template` from `agent.model.get_tokenizer().chat_template`
+- use `call_agent=True` when you want the agentic tool-calling loop enabled
+
+Multi-GPU settings are environment-specific and may require tuning for the
+available GPU memory, vLLM version, and maximum context length.
+
 **Install ToolUniverse**:
 
 ```
