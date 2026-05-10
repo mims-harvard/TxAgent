@@ -1,4 +1,3 @@
-from sentence_transformers import SentenceTransformer
 import torch
 import json
 from .utils import get_md5
@@ -11,14 +10,24 @@ class ToolRAGModel:
         self.tool_desc_embedding = None
         self.tool_name = None
         self.tool_embedding_path = None
-        self.load_rag_model()
 
     def load_rag_model(self):
+        if self.rag_model is not None:
+            return
+        try:
+            from sentence_transformers import SentenceTransformer
+        except ImportError as exc:
+            raise ImportError(
+                "sentence-transformers is required for ToolRAGModel. "
+                "Install it with `pip install sentence-transformers` and retry."
+            ) from exc
+
         self.rag_model = SentenceTransformer(self.rag_model_name)
         self.rag_model.max_seq_length = 4096
         self.rag_model.tokenizer.padding_side = "right"
 
     def load_tool_desc_embedding(self, toolbox):
+        self.load_rag_model()
         self.tool_name, _ = toolbox.refresh_tool_name_desc(
             enable_full_desc=True)
         all_tools_str = [json.dumps(
@@ -44,6 +53,7 @@ class ToolRAGModel:
             exit()
 
     def rag_infer(self, query, top_k=5):
+        self.load_rag_model()
         torch.cuda.empty_cache()
         queries = [query]
         query_embeddings = self.rag_model.encode(
