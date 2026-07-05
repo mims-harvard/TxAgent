@@ -3,7 +3,9 @@ import os
 import sys
 import json
 import gc
+import logging
 import numpy as np
+import torch
 from vllm import LLM, SamplingParams
 from jinja2 import Template
 from typing import List
@@ -13,6 +15,9 @@ from gradio import ChatMessage
 from .toolrag import ToolRAGModel
 
 from .utils import NoRepeatSentenceProcessor, ReasoningTraceChecker, tool_result_format
+
+
+logger = logging.getLogger(__name__)
 
 
 class TxAgent:
@@ -681,6 +686,8 @@ Generate **one summarized sentence** about "function calls' responses" with nece
 
         function_response = ''
         idx = 0
+        last_call_idx = None
+        this_thought_calls = None
         current_summarized_index = status['summarized_index']
 
         status['history'].append(self.summary_mode == 'step' and status['summarized_step']
@@ -705,10 +712,11 @@ Generate **one summarized sentence** about "function calls' responses" with nece
                                 max_token=99999
                             )
 
-                            input_list.insert(
-                                last_call_idx+1, {'role': 'tool', 'content': result_summary})
-                            status['summarized_index'] = last_call_idx + 2
-                            idx += 1
+                            if last_call_idx is not None:
+                                input_list.insert(
+                                    last_call_idx+1, {'role': 'tool', 'content': result_summary})
+                                status['summarized_index'] = last_call_idx + 2
+                                idx += 1
 
                         last_call_idx = idx
                         this_thought_calls = input_list[idx]['content'] + \
@@ -724,7 +732,7 @@ Generate **one summarized sentence** about "function calls' responses" with nece
                 break
             idx += 1
 
-        if len(function_response) != 0:
+        if len(function_response) != 0 and last_call_idx is not None:
             status['summarized_step'] += 1
             result_summary = self.run_summary_agent(
                 thought_calls=this_thought_calls,
